@@ -2,15 +2,21 @@
 
 int main(){
 
-    std::cout << Dice::roll() << "\n";
+    int input {};
 
-    Box box = Box(7);
+    std::cout << "---SHUT THE BOX---\n"; //TODO: menu with proper options (play, instructions, quit etc)
+    std::cout << "Do you want to play with 9 or 12 boxes?\n";
 
-    box.print();
+    while(input != 9 && input != 12){
+        std::cin >> input;
+        if(input != 9 && input != 12) 
+            std::cout << "invalid input. Try again (choose 9 or 12)\n";
+        std::cin.clear();
+    }
 
-    box.close(5);
+    Game game = Game(input); //TODO: fix gameState's
 
-    box.print();
+    game.run();
 
     return 0;
 }

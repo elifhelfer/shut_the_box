@@ -15,12 +15,13 @@ class Box{
     public:
         Box(int doorAmnt);
         void close(int doorNmbr);
-        void print();
-        bool isDoorOpen(int doorNmbr);
+        void print() const;
+        bool isDoorOpen(int doorNmbr) const;
+        const std::vector<int>& getOpenDoors() const;
     
     private:
         std::vector<std::string> doors;
-        std::vector<int> openDoors = {};
+        std::vector<int> openDoors;
 };
 
 class Game{
@@ -28,13 +29,10 @@ class Game{
         Game(int doorAmnt) : box(doorAmnt){};
         void run();
         void handleInput(); 
-        void printMenu();
-        void printInstructions();
 
     private:
         Box box;
         int currentRoll;
-        std::vector<int> openDoors();
-        GameState gameState = GameState::menu;
+        GameState gameState = GameState::running;
 
 };
