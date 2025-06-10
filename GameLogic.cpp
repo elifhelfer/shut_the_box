@@ -39,7 +39,7 @@ InputResult GameLogic::handleInput(int input){
 }
 
 bool GameLogic::validadeInput(int input){
-    return !(input < 0 || input > box.getSize()+1 || !box.isDoorOpen(input) || input > currentRoll);
+    return !(input < 0 || input > box.getSize() || !box.isDoorOpen(input) || input > currentRoll);
 }
 
 bool GameLogic::validChoiceExists(){
