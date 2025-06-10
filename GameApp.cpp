@@ -72,6 +72,7 @@ void GameApp::gameLoop(){
             currentGame.printBox();
 
             if(!currentGame.validChoiceExists()){   //if dice rolled are impossible to use, loses game
+                std::cout << "Invalid amount rolled. You rolled " << currentGame.getCurrentRoll() << "\n";
                 currentGame.gameOver();
                 gameState = GameState::menu;
                 return;
