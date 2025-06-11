@@ -60,7 +60,6 @@ void GameApp::run(){
 }
 
 void GameApp::gameLoop(){
-
     while(!currentGame.isGameWon()){ //OVERALL LOOP
         std::cout << "\n======TURN START======\n";
         currentGame.rollDice();
@@ -113,6 +112,7 @@ void GameApp::gameLoop(){
     std::cout << "\n\n============YOU WIN===========\n";
     std::cout << "You successfully closed all doors! Hooray! Yippie! Yay!\n";
     std::cout << "Returning to menu.\n\n";
+    gameState = GameState::menu;
 }
 
 int GameApp::readInput(){
